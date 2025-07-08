@@ -1,6 +1,5 @@
 import { Bot, Car, Clock, MessageCircle, Search, Send, User } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 const ArabicCarChat = () => {
   const [messages, setMessages] = useState([]);
@@ -147,9 +146,9 @@ const ArabicCarChat = () => {
                     : 'bg-white text-gray-800 border border-gray-200'
                   }`}
               >
-                <ReactMarkdown className="whitespace-pre-wrap leading-relaxed">
+                <div className="whitespace-pre-wrap leading-relaxed">
                   {message.content}
-                </ReactMarkdown>
+                </div>
 
                 {/* Metadata for bot messages */}
                 {message.type === 'bot' && message.metadata && (
