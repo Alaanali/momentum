@@ -32,8 +32,11 @@ const ArabicCarChat = () => {
     };
     setMessages(prev => [...prev, userMsgObj]);
 
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+    console.log(apiBaseUrl)
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/chat`, {
+      const response = await fetch(`${apiBaseUrl}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
