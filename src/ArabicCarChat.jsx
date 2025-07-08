@@ -146,9 +146,12 @@ const ArabicCarChat = () => {
                     : 'bg-white text-gray-800 border border-gray-200'
                   }`}
               >
-                <div className="whitespace-pre-wrap leading-relaxed">
-                  {message.content}
-                </div>
+                <div
+                  className="leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: message.content.replace(/\n/g, '<br />')
+                  }}
+                />
 
                 {/* Metadata for bot messages */}
                 {message.type === 'bot' && message.metadata && (
